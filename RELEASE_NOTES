@@ -1,0 +1,7 @@
+EzTexting.connect!("joshm","qwerty")
+message = {:phonenumber=>"5164920096", :password=>"qwerty", :user=>"joshm", :message=>"test", :subject=>"testddsada"}
+
+EzTexting::Sms.single(message)
+// 1
+EzTexting::Credits.check?
+// 689

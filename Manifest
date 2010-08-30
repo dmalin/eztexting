@@ -1,0 +1,14 @@
+LICENSE
+RELEASE_NOTES
+Rakefile
+VERSION
+lib/eztexting.rb
+lib/eztexting/availablity.rb
+lib/eztexting/balance.rb
+lib/eztexting/base.rb
+lib/eztexting/credits.rb
+lib/eztexting/keywords.rb
+lib/eztexting/lookup.rb
+lib/eztexting/sms.rb
+lib/eztexting/voice.rb
+Manifest
