@@ -1,6 +1,8 @@
 module Eztexting
   class Base
     
+    # This method never is really called by itself it is called from the classses do the work of the actual 
+    # interaction with the api itself. 
     def self.do_post(uri,options)
       options  = options || {}
       options  = options.merge!(Eztexting.credentials)
@@ -10,6 +12,9 @@ module Eztexting
       return response.body
     end
     
+    # This is a default result mapping. The response from the API is usually a coded number (except for the balance call which returns
+    # the acutal number of credits). Here we map over those values to a response. This is sometimes overidden by the subclasses as thses
+    # mappings to not apply the same way to all commands
     def self.process(response)
       api_result = case response
       when "-1"
@@ -21,6 +26,7 @@ module Eztexting
       end
     end
     
+    # This just assembles the data to be returned from do_post in a nice clean way 
     def self.processed_reponse(response_result,response_body)
       [response_result,response_body]
     end

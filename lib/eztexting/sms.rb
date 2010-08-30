@@ -2,7 +2,7 @@ module Eztexting
   class Sms < Base
     
     # Send out a singular SMS
-    # @param [Hash] opts is a hash with keys/value pairs of subject, message and phone number
+    # @param [Hash] opts is a hash with keys/value pairs of subject, message and phone number. The phonenumber, subject and message are required by the API
     # @return [Array] The return is an array of two elements, the mapped error code according to the extexting and the raw response
     def self.single(opts={})
       location = "/sending"
@@ -14,7 +14,7 @@ module Eztexting
     end
     
     # Send Out Multiple Messages
-    # @param [Array] messages is an array of hashes which are hashes that are identical to the hash passed into the single SMS method
+    # @param [Array] messages is an array of hashes which are hashes that are identical to the hash passed into the single SMS method. This requires the same keys as the single method
     # @return [Array] The return is an array of two elements, the mapped error code according to the extexting and the raw response
     def self.multi(messages)
       location = "/sending"
@@ -51,6 +51,8 @@ module Eztexting
       else
         "Unknown error (please contact our support dept.)"
       end
+      
+      return api_result
     end
     
   end

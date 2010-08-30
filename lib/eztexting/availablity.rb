@@ -1,6 +1,9 @@
 module Eztexting
   class Availability < Base
     
+    # Check the availablity of a keyword 
+    # @param [String] This is the keyword that you would like to check the status of.
+    # @return [Array] The first element will be weather the keyword is free or a status message , the second element is the raw response
     def self.check(keyword)
       location = "/keyword/check/"
       options  = {:keyword => keyword}
@@ -10,6 +13,9 @@ module Eztexting
       
       return self.processed_reponse(response_result,response)
     end
+    
+    
+    private
     
     def self.process(response)
       api_result = case response
@@ -24,6 +30,8 @@ module Eztexting
       else
         "error"
       end
+      
+      return api_result
     end
     
   end

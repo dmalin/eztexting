@@ -1,0 +1,41 @@
+h1. eztexting
+
+This is a gem built to make the eztexting api's as easy to use as possible. They allow for use of all of what the API offers in a 
+very easy and clear fashion.
+
+h2. Dependencies
+
+This gem relies on HTTParty for making its requests. That is the only runtime dependency. The testing uses rspec and the documentation
+is written to be viewed with YARD.
+
+h2. API Calls Available
+These are the following calls available and their corresponding classes to use them
+
+* SMS (Eztexting::Sms)
+* Credit Purchase and Balance Check (Eztexting::Credits)
+* Keyword Check and Configuration (Eztexting::Keyword)
+* Carrier Lookups (Eztexting::Lookup)
+* Voice Broadcast (Eztexting::Broadcast)
+  
+
+h2. Basic Example
+
+<notextile><pre>
+  
+# Setup the connection for making requests.
+Eztexting.connect!('username','password')
+# => "credentials cached"  
+  
+# Make a hash with the required keys of subject, message and phonenumber
+# and then send out the SMS. Its that simple. 3 lines, 2 if you condense the creation of the Hash into the Method call
+# The response will be an array , the first element will be the response mapped from the code to the literal that the Eztexting
+# documentation lists out. The second element will be the raw value. In some cases this bit is important , in the credit balance
+# check this would be the number of credits. 
+msg = {:subject => "testing out how awesome eztexting is", :phonenumber => "5165551234", :message => "Wow this is so simple and easy to use"}
+Eztexting::Sms.single(msg)
+# => ["Message Sent",1]
+
+# Check Your Credit Count
+Eztexting::Credits.balance
+# => ["The amount of plan and additional credits available", 54353]
+</pre></notextile>

@@ -1,6 +1,8 @@
 module Eztexting
   class Credits < Base
     
+    # Check the balance of credits left on your account
+    # @return [Array] The return is an array of two elements, if the call was sucessfull the you should get the success and the second element will be the number of credits available.
     def self.balance
       location = "/credits/check/"
       
@@ -16,6 +18,9 @@ module Eztexting
       return self.processed_reponse(response_result,response)
     end
     
+    # Purchase more credits for your account
+    # @param [Hash] This takes alot of keys that are all required, you need a full billing address and a full credit card
+    # @return [Array] The return is an array of two elements, the mapped error code according to the extexting and the raw response
     def self.purchase(opts={})
       location = "/credits/buy/"
       options = {
@@ -56,6 +61,8 @@ module Eztexting
       else
         "Unknown error (please contact our support dept.)"
       end
+      
+      return api_result
     end
     
   end

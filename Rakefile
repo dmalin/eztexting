@@ -10,7 +10,7 @@ Echoe.new('eztexting', '0.3.0') do |p|
   p.email           = "dmalin@eztexting.com"  
   p.ignore_pattern  = ["tmp/*", "script/*"]  
   p.development_dependencies = []  
-#  p.runtime_dependencies = ["httparty >=0.6.0"]
+  p.runtime_dependencies = ["httparty >=0.6.0"]
 end  
 
 YARD::Rake::YardocTask.new do |t|
