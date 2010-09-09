@@ -3,7 +3,7 @@ module Eztexting
     
     # Use the Voicebroadcast feature of the API
     # @param [Hash] This has needs the following keys, phonenumbers to call, the recording src and the caller_id value
-    # @returns [Array] The return is an array of two elements, the mapped error code according to the extexting and the raw response
+    # @return  [Array] The return is an array of two elements, the mapped error code according to the extexting and the raw response
     def self.broadcast(opts={})
       location = "/voicemessages/"
       

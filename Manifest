@@ -1,9 +1,10 @@
 LICENSE
 Manifest
+README.textile
 RELEASE_NOTES
 Rakefile
 VERSION
-eztexting.gemspec
+examples/example_script.rb
 lib/eztexting.rb
 lib/eztexting/availablity.rb
 lib/eztexting/base.rb
@@ -12,3 +13,6 @@ lib/eztexting/keywords.rb
 lib/eztexting/lookup.rb
 lib/eztexting/sms.rb
 lib/eztexting/voice.rb
+spec/eztexting/eztexting_spec.rb
+spec/spec.opts
+spec/spec_helper.rb

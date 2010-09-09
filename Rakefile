@@ -5,7 +5,7 @@ require 'yard'
   
 Echoe.new('eztexting', '0.3.0') do |p|  
   p.description     = "A Gem to make using eztexting simple and fun"  
-  p.url             = "http://github.com/eztexting/eztexting"  
+  p.url             = "http://github.com/EzTexting/eztexting"  
   p.author          = "David Malin"  
   p.email           = "dmalin@eztexting.com"  
   p.ignore_pattern  = ["tmp/*", "script/*"]  

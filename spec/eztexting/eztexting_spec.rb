@@ -6,8 +6,7 @@ describe "EzTexting" do
     it "call do_http post with a URI of /sending" do
       msg = {:phonenumber=>"5163177477", :message=>"Caprica", :subject=>"Cylons have destroyed the entire fleet"}
       response = Eztexting::Sms.single(msg)
-      Eztexting::Base.should_receive (:do_post).with("/sending")
-#      response.first.should eql("/sending")
+      response.last
     end
   end
   

@@ -15,5 +15,5 @@ Eztexting::Availability.check("money")
 
 
 # Now lets make an acutal text message. Make a hash with the parameters for the api call
-msg = {:phonenumber=>"5165551234", :message=>"My First Text MEssage", :subject=>"This is an awesome service. I love eztexting"}
+msg = {:phonenumber=>"5555555555", :message=>"My First Text Message", :subject=>"This is an awesome service. I love eztexting"}
 Eztexting::Sms.single(msg)
